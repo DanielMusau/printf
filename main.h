@@ -6,6 +6,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void _printf(const char *format, ...);
+int _printf(const char *format, ...);
 
 #endif
