@@ -1,6 +1,11 @@
 #ifndef _MAIN_
 #define _MAIN_
 
-int _printf(const char *format, ...);
+#include <unistd.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+void _printf(const char *format, ...);
 
 #endif
