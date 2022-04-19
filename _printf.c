@@ -6,6 +6,7 @@
  *
  * Return: number of chars printed.
  */
+<<<<<<< HEAD
 void v_printf(const char *format, va_list args)
 {
 	char ch;
@@ -55,9 +56,12 @@ void v_printf(const char *format, va_list args)
 		format++;
 	}
 }
+=======
+>>>>>>> printf_function
 int _printf(const char *format, ...)
 {
 	va_list args;
+
 	va_start(args, format);
 
 	v_printf(format, args);

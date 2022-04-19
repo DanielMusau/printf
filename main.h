@@ -7,5 +7,10 @@
 #include <stdio.h>
 
 int _printf(const char *format, ...);
+<<<<<<< HEAD
+=======
+void v_printf(const char *format, va_list args);
+void print_ch(const char *format, va_list args);
+>>>>>>> printf_function
 
 #endif
