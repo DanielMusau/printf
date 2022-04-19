@@ -8,13 +8,21 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list args;
+	int printed_chars;
+	conver_t f_list[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"%", print_percent},
+		{NULL, NULL},
+	};
+	va_list arg_list;
 
-	va_start(args, format);
+	if (format == NULL)
+		return (-1);
 
-	v_printf(format, args);
+	va_start(arg_list, format);
 
-	va_end(args);
-
-	return (0);
+	printed_chars = parser(format, f_list, arg_list);
+	va_end(arg_list);
+	return (printed_chars);
 }
