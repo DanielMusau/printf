@@ -8,4 +8,10 @@
 
 int _printf(const char *format, ...);
 
+typedef struct identifierStruct
+{
+char *indentifier;
+int (*printer)(va_list);
+} identifierStruct;
+
 #endif
