@@ -22,7 +22,7 @@ void v_printf(const char *format, va_list args)
 			}
 			else 
 			{
-				_putchar(*format);
+				putchar(*format);
 			}
 		} else if (state == 1)
 		{
@@ -30,13 +30,13 @@ void v_printf(const char *format, va_list args)
 			{
 				case 'c':
 					ch = va_arg(args, int);
-					_putchar(ch);
+					putchar(ch);
 					break;
 				case 's':
 					s = va_arg(args, const char *);
 					while (*s)
 					{
-						_putchar(*s++);
+						putchar(*s++);
 					}
 					break;
 				case 'd':
@@ -46,8 +46,8 @@ void v_printf(const char *format, va_list args)
 
 					break;
 				case 'p':
-					_putchar('0');
-					_putchar('x');
+					putchar('0');
+					putchar('x');
 					break;
 			}
 			state = 0;
