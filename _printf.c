@@ -6,55 +6,6 @@
  *
  * Return: number of chars printed.
  */
-void v_printf(const char *format, va_list args)
-{
-	char ch;
-	const char *s;
-	int state = 0;
-
-	while (*format)
-	{
-		if (state == 0)
-		{
-			if (*format == '%')
-			{
-				state = 1;
-			}
-			else 
-			{
-				putchar(*format);
-			}
-		} else if (state == 1)
-		{
-			switch (*format)
-			{
-				case 'c':
-					ch = va_arg(args, int);
-					putchar(ch);
-					break;
-				case 's':
-					s = va_arg(args, const char *);
-					while (*s)
-					{
-						putchar(*s++);
-					}
-					break;
-				case 'd':
-
-					break;
-				case 'x':
-
-					break;
-				case 'p':
-					putchar('0');
-					putchar('x');
-					break;
-			}
-			state = 0;
-		}
-		format++;
-	}
-}
 int _printf(const char *format, ...)
 {
 	int printed_chars;
@@ -62,6 +13,8 @@ int _printf(const char *format, ...)
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
+		{"d", print_integer},
+		{"i", print_integer},
 		{NULL, NULL},
 	};
 	va_list arg_list;
