@@ -54,5 +54,6 @@ int print_integer(va_list list)
 	int n_length;
 
 	n_length = print_number(list);
+
 	return (n_length);
 }
