@@ -20,7 +20,7 @@ int parser(const char *format, conver_t f_list[], va_list arg_list)
 			for (j = 0; f_list[j].sym != NULL; j++)
 			{
 				if (format[i + 1] == f_list[j].sym[0])
-				{
+        {
 					r_val = f_list[j].f(arg_list);
 					if (r_val == -1)
 						return (-1);
